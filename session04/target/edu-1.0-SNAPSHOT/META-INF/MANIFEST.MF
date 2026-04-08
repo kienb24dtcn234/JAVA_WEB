@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: nguyennhung20121999gmail.com
+Build-Jdk: Amazon Corretto 17.0.18 - aarch64
+
