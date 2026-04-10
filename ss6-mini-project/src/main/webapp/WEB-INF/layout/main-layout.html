@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header style="text-align: center; padding: 16px; background-color: #f5f5f5;" >
+    <h1>EDU-PATH</h1>
+    <p>Lộ trình chinh phục tiếng Anh cho mọi cấp độ</p>
+</header>
+
+<nav style="padding: 10px 16px; background-color: #333; color: #fff;">
+    <a th:href="@{/course/list}"
+       style="color: #fff; margin-right: 16px; text-decoration: none;">
+        Danh sách khóa học
+    </a>
+    <a th:href="@{/course/register-consult}"
+       style="color: #fff; text-decoration: none;">
+        Đăng ký tư vấn
+    </a>
+</nav>
+
+<div layout:fragment="content"></div>
+
+<footer style="text-align: center; padding: 16px; background-color: #f5f5f5; margin-top: 32px;" >
+    <small>© 2026 Edu-Path. All rights reserved.</small>
+</footer>
+</body>
+</html>

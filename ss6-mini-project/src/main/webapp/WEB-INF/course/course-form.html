@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chỉnh sửa khóa học</title>
+</head>
+
+<body layout:decorate="~{layout/main-layout}">
+<header style="text-align: center; padding: 16px; background-color: #f5f5f5;" >
+  <h1>EDU-PATH</h1>
+  <p>Lộ trình chinh phục tiếng Anh cho mọi cấp độ</p>
+</header>
+
+<nav style="padding: 10px 16px; background-color: #333; color: #fff;">
+  <a th:href="@{/course/list}"
+     style="color: #fff; margin-right: 16px; text-decoration: none;">
+    Danh sách khóa học
+  </a>
+  <a th:href="@{/course/register-consult}"
+     style="color: #fff; text-decoration: none;">
+    Đăng ký tư vấn
+  </a>
+</nav>
+
+<div layout:fragment="content">
+
+  <h2 style="margin-bottom:20px;">Chỉnh sửa khóa học</h2>
+
+  <!-- MESSAGE -->
+  <p th:if="${success}" style="color:green;" th:text="${success}"></p>
+  <p th:if="${error}" style="color:red;" th:text="${error}"></p>
+
+  <form th:action="@{/course/update}" method="post" th:object="${course}"
+        style="max-width:500px; padding:20px; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+
+    <!-- ID -->
+    <input type="hidden" th:field="*{id}">
+
+    <div style="margin-bottom:12px;">
+      <label>Tên khóa</label><br>
+      <input type="text" th:field="*{name}" disabled
+             style="width:100%; padding:8px;">
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <label>Trình độ</label><br>
+      <input type="text" th:field="*{level}" disabled
+             style="width:100%; padding:8px;">
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <label>Giảng viên</label><br>
+      <input type="text" th:field="*{teacher}" disabled
+             style="width:100%; padding:8px;">
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <label>Học phí</label><br>
+      <input type="number" th:field="*{price}"
+             style="width:100%; padding:8px;">
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <label>Ngày khai giảng</label><br>
+      <input type="date" th:field="*{startDate}"
+             style="width:100%; padding:8px;">
+    </div>
+
+    <!-- BUTTON -->
+    <div style="margin-top:20px;">
+      <button type="submit"
+              style="padding:8px 16px; background:#28a745; color:white; border:none; border-radius:4px;">
+        Lưu
+      </button>
+
+      <a th:href="@{/course/list}"
+         style="margin-left:10px; text-decoration:none;">
+        Hủy
+      </a>
+    </div>
+
+  </form>
+
+</div>
+<footer style="text-align: center; padding: 16px; background-color: #f5f5f5; margin-top: 32px;" >
+  <small>© 2026 Edu-Path. All rights reserved.</small>
+</footer>
+</body>
+</html>
