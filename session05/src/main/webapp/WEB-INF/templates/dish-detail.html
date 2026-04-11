@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+  <title>Chi tiết món ăn</title>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+  <h2>Chi tiết món ăn</h2>
+
+  <p><b>Tên:</b> <span th:text="${dish.name}"></span></p>
+  <p><b>Giá:</b> <span th:text="${dish.price}"></span></p>
+
+</div>
+
+</body>
+</html>
